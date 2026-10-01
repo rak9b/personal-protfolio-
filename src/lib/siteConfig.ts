@@ -19,19 +19,19 @@
 
 // ─── YOUR IDENTITY ───────────────────────────────────
 export const identity = {
-  name: "Your Name",
-  tagline: "Traveler · Thinker · Engineer",
-  heroSubtitle: "Currently somewhere between airport terminals and interesting ideas. Building things. Reading books. Moving forward.",
-  email: "hello@yoursite.com",
-  manifesto: "I don’t have hobbies — I have obsessions that occasionally produce something useful.",
+  name: "MD. Rakibul Islam",
+  tagline: "Full Stack & AI Automation Engineer",
+  heroSubtitle: "Building scalable architectures, real-time distributed platforms, and enterprise AI automation workflows. Based in Chittagong, Bangladesh · Serving global teams.",
+  email: "mdrakibislam7018@gmail.com",
+  manifesto: "Engineering scalable distributed systems with clean architectures, robust real-time synchronization, and automated efficiency.",
 };
 
 // ─── SOCIAL LINKS ────────────────────────────────────
 export const socials = {
-  github: { url: "https://github.com/rak9b", label: "The Lab" },
-  instagram: { url: "https://instagram.com", label: "Dispatches" },
-  linkedin: { url: "https://linkedin.com", label: "The Industry" },
-  twitter: { url: "https://x.com", label: "Signals" },
+  github: { url: "https://github.com/rak9b", label: "GitHub" },
+  linkedin: { url: "https://linkedin.com/in/rak9b", label: "LinkedIn" },
+  email: { url: "mailto:mdrakibislam7018@gmail.com", label: "Email" },
+  portfolio: { url: "https://frontend-alpha-orcin-72.vercel.app", label: "Portfolio" },
 };
 
 // ─── HERO IMAGES ─────────────────────────────────────
@@ -42,10 +42,10 @@ export const heroImages = {
 
 // ─── STATS ───────────────────────────────────────────
 export const stats = {
-  countries: 43,
-  books: 127,
-  projects: 21,
-  yearsEngineering: 6,
+  projectsShipped: 15,
+  automationEfficiency: 40,
+  yearsEngineering: 3,
+  happyClients: 10,
 };
 
 // ─── TRAVEL DESTINATIONS ─────────────────────────────

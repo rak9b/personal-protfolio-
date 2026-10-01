@@ -74,10 +74,10 @@ export default function Home() {
       {/* STATS */}
       <section className="container section-pad">
         <div className="stats-grid">
-          <Counter target={stats.countries} suffix="+" label="Countries visited" />
-          <Counter target={stats.books} label="Books read" />
-          <Counter target={stats.projects} label="Projects shipped" />
-          <Counter target={stats.yearsEngineering} label="Years engineering" />
+          <Counter target={stats.projectsShipped} suffix="+" label="Production Projects" />
+          <Counter target={stats.automationEfficiency} suffix="%" label="Operational Time Saved" />
+          <Counter target={stats.yearsEngineering} suffix="+" label="Years Engineering" />
+          <Counter target={stats.happyClients} suffix="+" label="Client Solutions Delivered" />
         </div>
       </section>
 
