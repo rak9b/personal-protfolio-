@@ -6,11 +6,11 @@ import { useSession, signOut } from "next-auth/react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const links = [
-  { href: "/travel", label: "Dispatches" },
-  { href: "/books", label: "Archives" },
-  { href: "/thinking", label: "Field Notes" },
-  { href: "/movies", label: "Reels" },
-  { href: "/about", label: "Origin" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/thinking", label: "Engineering Insights" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {
@@ -39,7 +39,7 @@ export default function Navigation() {
     <>
       <nav className={"site-nav" + (scrolled ? " scrolled" : "")}>
         <Link href="/" className="nav-logo">
-          <span className="logo-sym">↳</span> Your Name
+          <span className="logo-sym">⚡</span> MD. Rakibul Islam
         </Link>
         <div className="nav-links">
           {links.map((l) => (

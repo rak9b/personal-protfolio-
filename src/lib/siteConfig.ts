@@ -104,5 +104,112 @@ export const aboutImages = {
   horizon: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop",
 };
 
+// ─── VERIFIED CV PROJECTS ────────────────────────────
+export const projects = [
+  {
+    id: "localgems",
+    title: "LocalGems — Tour Booking SaaS Platform",
+    tagline: "Curated Travel SaaS Marketplace with Real-Time Booking & Multi-Role Dashboards",
+    description: "Engineered a premium travel SaaS platform to bridge the gap between authentic local experiences and global travelers. The marketplace connects tourists with verified local guides through curated tours, real-time bookings, and comprehensive dashboards.",
+    highlights: [
+      "Developed multi-role dashboards (Tourist, Guide, Admin) with real-time revenue analytics and performance tracking.",
+      "Implemented advanced tour filtering with real-time availability, reducing booking time by 30%.",
+      "Architected a robust PostgreSQL database with Prisma ORM, ensuring 100% TypeScript type safety and data integrity."
+    ],
+    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Redux Toolkit", "Stripe", "Framer Motion"],
+    liveUrl: "https://github.com/rak9b/localgem_frontend",
+    codeUrl: "https://github.com/rak9b/localgem_frontend",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80&fit=crop"
+  },
+  {
+    id: "riderapp",
+    title: "RiderApp — Urban Mobility & Ride-Hailing Platform",
+    tagline: "Full-Stack Ride Dispatch System with Live GPS Tracking & Socket.io Sync",
+    description: "Engineered a full-stack ride-hailing platform to address inefficient booking processes that resulted in poor user experiences and delayed rider-driver matching. The system automates ride booking and dispatch with real-time tracking, interactive maps, and multi-role dashboards.",
+    highlights: [
+      "Implemented flexible authentication supporting both database and in-memory storage for scalable user management.",
+      "Utilized Redux state management and Socket.io for real-time synchronization across riders, drivers, and administrators.",
+      "Integrated SOS emergency assistance and comprehensive ride history tracking to enhance user safety and experience."
+    ],
+    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Redux Toolkit", "Socket.io", "Leaflet.js", "Docker"],
+    liveUrl: "https://github.com/rak9b/rider-app---frontend",
+    codeUrl: "https://github.com/rak9b/rider-app---frontend",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop"
+  },
+  {
+    id: "akademi",
+    title: "Akademi — Scholarship Management Platform",
+    tagline: "Centralized EdTech Scholarship Portal with Glassmorphic UI & Zod Validation",
+    description: "Built a production-grade scholarship platform to address fragmented scholarship discovery and application processes that hindered student accessibility. Centralizes scholarship management with real-time tracking, multi-role dashboards, and streamlined application workflows.",
+    highlights: [
+      "Designed scholarship filtering with a glassmorphic UI and auto-filled applications, improving application rates by 40%.",
+      "Secured user data with JWT authentication, Firebase integration, and Zod validation for robust form handling."
+    ],
+    tech: ["React", "Node.js", "MongoDB", "Stripe", "Firebase", "JWT", "Zod", "Framer Motion", "Tailwind CSS"],
+    liveUrl: "https://github.com/rak9b/Akademi---Scholarship-Management-System-frontend-",
+    codeUrl: "https://github.com/rak9b/Akademi---Scholarship-Management-System-frontend-",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80&fit=crop"
+  }
+];
+
+// ─── VERIFIED WORK EXPERIENCE ────────────────────────
+export const experiences = [
+  {
+    role: "AI Automation & Full-Stack Developer",
+    company: "SimplifAI",
+    location: "Canada (Remote)",
+    period: "2024 — Present",
+    highlights: [
+      "Led end-to-end e-commerce development integrated with an AI system, boosting user engagement by 35%.",
+      "Built and deployed n8n automation workflows for lead generation, CRM, and email systems, reducing manual operational work by 40%.",
+      "Created automated video content pipelines that cut production time by 50%.",
+      "Delivered HIPAA-compliant security protocols, secure authentication, and end-to-end data encryption.",
+      "Managed the complete product lifecycle, system architecture, and team, driving revenue growth through AI-powered automation solutions."
+    ],
+    skills: ["AI Automation", "n8n", "LLM Pipelines", "Next.js", "HIPAA Compliance", "Node.js", "PostgreSQL"]
+  },
+  {
+    role: "Full Stack Developer (Technical Lead)",
+    company: "Imranslab",
+    location: "Canada (Remote)",
+    period: "2023 — 2024",
+    highlights: [
+      "Spearheaded the full-stack development of a comprehensive e-commerce bookstore platform using the MERN stack.",
+      "Designed responsive frontend interfaces and robust system architecture, writing scalable backend code for high performance.",
+      "Integrated an AI-powered chatbot to automate customer support, significantly improving user experience and response times.",
+      "Led and mentored the development team as the technical lead, ensuring the timely 30% faster delivery of project milestones."
+    ],
+    skills: ["React", "Node.js", "Express", "MongoDB", "AI Chatbot", "Team Leadership", "Agile"]
+  }
+];
+
+// ─── EDUCATION ───────────────────────────────────────
+export const education = {
+  degree: "B.Sc. in Computer Science & Engineering",
+  institution: "University of the People",
+  location: "Pasadena, California, USA (Online)",
+  focus: "Algorithms, Distributed Systems, Software Engineering & AI"
+};
+
+// ─── SKILLS CATEGORIES ───────────────────────────────
+export const skillsCategories = [
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Redux Toolkit", "RTK Query", "Framer Motion"]
+  },
+  {
+    category: "Backend & Distributed Systems",
+    items: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "Prisma ORM", "RESTful APIs", "Socket.io", "JWT Authentication"]
+  },
+  {
+    category: "AI & Automation",
+    items: ["LLM Integration", "n8n Automation", "Video Content Pipelines", "Automated CRM Systems", "Prompt Engineering"]
+  },
+  {
+    category: "Tools & DevOps",
+    items: ["Git", "Docker", "Vercel", "Firebase", "Stripe", "Postman", "Vite", "Netlify"]
+  }
+];
+
 // ─── TECH STACK BADGES ───────────────────────────────
-export const techStack = ["TypeScript", "React", "Next.js", "Node.js", "Python", "PostgreSQL", "Docker", "AWS", "Figma", "GSAP"];
+export const techStack = ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "MongoDB", "Docker", "Socket.io", "n8n"];

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
-import { identity, heroImages, stats, fieldNotes, destinations } from "@/lib/siteConfig";
+import { identity, heroImages, stats, projects, experiences, skillsCategories, fieldNotes } from "@/lib/siteConfig";
+import { ExternalLink, Github, CheckCircle2, Briefcase, Code2, ArrowRight } from "lucide-react";
 
 const HeroScene = dynamic(() => import("@/components/3d/HeroScene"), { ssr: false });
 
@@ -19,56 +20,12 @@ export default function Home() {
           <p className="hero-eyebrow">{identity.tagline}</p>
           <h1 className="hero-title">{identity.name.split(" ").map((w, i) => <span key={i}>{w}<br /></span>)}</h1>
           <p className="hero-sub">{identity.heroSubtitle}</p>
-          <Link href="/about" className="hero-cta">Know the story</Link>
+          <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
+            <Link href="/projects" className="hero-cta">View Flagship Projects</Link>
+            <Link href="/contact" className="btn btn-ghost">Get In Touch</Link>
+          </div>
         </motion.div>
         <div className="hero-scroll"><span>Scroll</span><div className="scroll-line" /></div>
-      </section>
-
-      {/* SPLIT PANEL */}
-      <section className="split-panel">
-        <Link href="/travel" className="split-half">
-          <img src={heroImages.traveler} alt="Travel" />
-          <div className="split-dimmer" />
-          <motion.div className="split-word" initial={{ x: "-110%", opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}>TRAVELER</motion.div>
-        </Link>
-        <Link href="/about" className="split-half">
-          <img src={heroImages.engineer} alt="Engineer" />
-          <div className="split-dimmer" />
-          <motion.div className="split-word" initial={{ x: "110%", opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}>ENGINEER</motion.div>
-        </Link>
-      </section>
-
-      {/* MARQUEE */}
-      <div className="marquee">
-        <div className="marquee-track">
-          {["Traveler","Thinker","Engineer","Reader","Builder","Explorer","Traveler","Thinker","Engineer","Reader","Builder","Explorer"].map((item, i) => (
-            <span key={i}><span className="marquee-item">{item}</span><span className="marquee-sep"> \u00b7 </span></span>
-          ))}
-        </div>
-      </div>
-
-      {/* FIELD NOTES PREVIEW */}
-      <section className="container section-pad">
-        <Reveal>
-          <div className="section-header">
-            <div><p className="section-label">Field Notes</p><h2 className="section-title">Recent Thinking</h2></div>
-            <Link href="/thinking" className="section-link" style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-label)", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--clr-text-muted)" }}>All notes</Link>
-          </div>
-        </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
-          {fieldNotes.slice(0, 3).map((c, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <article className="card">
-                <div className="card-img-wrap"><img src={c.img} alt={c.title} loading="lazy" /></div>
-                <div className="card-body">
-                  <p className="card-label">{c.label}</p>
-                  <h3 className="card-title">{c.title}</h3>
-                  <p className="card-excerpt">{c.excerpt}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* STATS */}
@@ -81,48 +38,135 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MANIFESTO */}
-      <section className="manifesto">
-        <motion.blockquote className="manifesto-quote" initial={{ clipPath: "inset(0 0 100% 0)" }} whileInView={{ clipPath: "inset(0 0 0% 0)" }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}>
-          \u201c{identity.manifesto}\u201d
-        </motion.blockquote>
-        <Reveal delay={0.3}><p className="manifesto-attr">Origin \u2014 Read the full story</p></Reveal>
-        <Reveal delay={0.4}><div style={{ marginTop: "3rem" }}><Link href="/about" className="btn btn-ghost">Read Origin \u2192</Link></div></Reveal>
-      </section>
-
-      {/* TRAVEL PREVIEW */}
+      {/* FEATURED PROJECTS SHOWCASE */}
       <section className="container section-pad">
         <Reveal>
           <div className="section-header">
-            <div><p className="section-label">Dispatches</p><h2 className="section-title">Recent Travels</h2></div>
-            <Link href="/travel" className="section-link" style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-label)", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--clr-text-muted)" }}>All destinations</Link>
+            <div>
+              <p className="section-label">Proof of Capability</p>
+              <h2 className="section-title">Flagship Engineering Projects</h2>
+            </div>
+            <Link href="/projects" className="section-link" style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-label)", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--clr-text-muted)" }}>
+              All projects →
+            </Link>
           </div>
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
-          {destinations.slice(0, 3).map((d, i) => (
-            <Reveal key={i} delay={i * 0.12}>
-              <Link href="/travel" className="dest-card">
-                <img src={d.img} alt={d.name} loading="lazy" />
-                <div className="dest-card-overlay">
-                  <p className="dest-card-country">{d.country}</p>
-                  <h3 className="dest-card-name">{d.name}</h3>
-                  <p className="dest-card-meta" style={{ marginTop: "1rem", fontSize: "var(--fs-sm)", color: "var(--clr-text-muted)" }}>{d.meta}</p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
+          {projects.map((p, idx) => (
+            <Reveal key={p.id} delay={idx * 0.12}>
+              <div className="card" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                <div className="card-img-wrap" style={{ height: "200px" }}>
+                  <img src={p.image} alt={p.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
-              </Link>
+                <div className="card-body" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+                  <p className="card-label">{p.tagline}</p>
+                  <h3 className="card-title" style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>{p.title}</h3>
+                  <p className="card-excerpt" style={{ marginBottom: "1rem", flex: 1 }}>{p.description}</p>
+                  
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.25rem" }}>
+                    {p.tech.slice(0, 4).map((t, i) => (
+                      <span key={i} style={{ fontSize: "0.7rem", padding: "0.2rem 0.5rem", borderRadius: "4px", background: "var(--clr-border)", fontFamily: "var(--font-mono)" }}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div style={{ display: "flex", gap: "0.75rem", borderTop: "1px solid var(--clr-border)", paddingTop: "1rem" }}>
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ flex: 1, padding: "0.5rem", fontSize: "0.8rem", textAlign: "center" }}>
+                      View Project
+                    </a>
+                    <a href={p.codeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ padding: "0.5rem 0.8rem", fontSize: "0.8rem" }}>
+                      Code
+                    </a>
+                  </div>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* THE CONNECTION CTA */}
-      <section className="manifesto" style={{ borderTop: "1px solid var(--clr-border)" }}>
+      {/* EXPERIENCE TIMELINE SUMMARY */}
+      <section className="container section-pad">
         <Reveal>
-          <p className="section-label" style={{ marginBottom: "1.5rem" }}>The Connection</p>
-          <h2 className="section-title" style={{ marginBottom: "1.5rem" }}>Looking for a Partner Who Gets It</h2>
-          <p style={{ color: "var(--clr-text-muted)", maxWidth: "600px", marginInline: "auto", lineHeight: "1.7", marginBottom: "2rem" }}>
-            Not just someone who checks boxes. Someone who reads, thinks, builds, and sees the world through a lens of curiosity. If that sounds like you, I'd love to know.
-          </p>
-          <Link href="/connect" className="btn btn-primary">Begin the Conversation \u2192</Link>
+          <div className="section-header">
+            <div>
+              <p className="section-label">Track Record</p>
+              <h2 className="section-title">Work Experience & AI Automation</h2>
+            </div>
+            <Link href="/experience" className="section-link" style={{ fontFamily: "var(--font-mono)", fontSize: "var(--fs-label)", letterSpacing: ".18em", textTransform: "uppercase", color: "var(--clr-text-muted)" }}>
+              Full history →
+            </Link>
+          </div>
+        </Reveal>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
+          {experiences.map((exp, idx) => (
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="card" style={{ padding: "2rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.5rem" }}>
+                  <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", color: "var(--clr-text)" }}>{exp.role}</h3>
+                  <span style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--clr-accent)" }}>{exp.period}</span>
+                </div>
+                <p style={{ fontSize: "0.85rem", color: "var(--clr-text-muted)", marginBottom: "1rem" }}>
+                  {exp.company} · {exp.location}
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  {exp.highlights.slice(0, 3).map((item, i) => (
+                    <li key={i} style={{ fontSize: "0.8rem", color: "var(--clr-text-muted)", marginBottom: "0.6rem", display: "flex", gap: "0.5rem" }}>
+                      <span style={{ color: "var(--clr-accent)" }}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* TECH STACK CHIPS */}
+      <section className="container section-pad">
+        <Reveal>
+          <div className="section-header">
+            <div>
+              <p className="section-label">Core Competencies</p>
+              <h2 className="section-title">Technical Mastery</h2>
+            </div>
+          </div>
+        </Reveal>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
+          {skillsCategories.map((cat, idx) => (
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="card" style={{ padding: "1.5rem" }}>
+                <h4 style={{ fontSize: "0.85rem", fontFamily: "var(--font-mono)", textTransform: "uppercase", color: "var(--clr-accent)", marginBottom: "1rem" }}>
+                  {cat.category}
+                </h4>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+                  {cat.items.map((skill, sIdx) => (
+                    <span key={sIdx} style={{ fontSize: "0.75rem", padding: "0.3rem 0.6rem", borderRadius: "6px", background: "var(--clr-border)", color: "var(--clr-text)" }}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* MANIFESTO / ENGINEERING STATEMENT */}
+      <section className="manifesto">
+        <motion.blockquote className="manifesto-quote" initial={{ clipPath: "inset(0 0 100% 0)" }} whileInView={{ clipPath: "inset(0 0 0% 0)" }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}>
+          “{identity.manifesto}”
+        </motion.blockquote>
+        <Reveal delay={0.3}><p className="manifesto-attr">Engineering Principles — MD. Rakibul Islam</p></Reveal>
+        <Reveal delay={0.4}>
+          <div style={{ marginTop: "2.5rem", display: "flex", gap: "1rem", justifyContent: "center" }}>
+            <Link href="/projects" className="btn btn-primary">Explore Projects →</Link>
+            <Link href="/contact" className="btn btn-ghost">Discuss a Project</Link>
+          </div>
         </Reveal>
       </section>
     </main>

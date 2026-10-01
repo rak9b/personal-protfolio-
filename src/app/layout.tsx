@@ -6,10 +6,11 @@ import FormGate from "@/components/ui/FormGate";
 import GuidedTour from "@/components/ui/GuidedTour";
 import ThemeProvider from "@/components/ui/ThemeProvider";
 import AuthProvider from "@/components/providers/AuthProvider";
+import ChatbotWidget from "@/components/ui/ChatbotWidget";
 
 export const metadata: Metadata = {
-  title: "Your Name — Traveler · Thinker · Engineer",
-  description: "Personal website of a traveler, thinker, and software engineer. Field notes from 40+ countries, books, essays, and projects.",
+  title: "MD. Rakibul Islam — Full Stack & AI Automation Engineer",
+  description: "Official portfolio of MD. Rakibul Islam. Showcasing production Next.js apps, real-time distributed platforms, and AI automation pipelines.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Navigation />
               {children}
               <Footer />
+              <ChatbotWidget />
             </FormGate>
             <GuidedTour />
           </ThemeProvider>
